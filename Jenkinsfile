@@ -10,6 +10,12 @@ pipeline {
         }
 
         stage('Install Dependencies') {
+            agent {
+                docker {
+                    image 'python:3.11-slim'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Installing dependencies...'
                 sh '''
@@ -21,6 +27,12 @@ pipeline {
         }
 
         stage('Run Tests') {
+            agent {
+                docker {
+                    image 'python:3.11-slim'
+                    reuseNode true
+                }
+            }
             steps {
                 echo 'Running tests...'
                 sh '''
