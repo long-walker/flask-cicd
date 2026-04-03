@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello from Flask CI/CD! Version 2 - deployed by Jenkins!"
+    return "Hello from Flask CI/CD! Auto-deployed by Jenkins via webhook!"
 
 
 @app.route("/health")
